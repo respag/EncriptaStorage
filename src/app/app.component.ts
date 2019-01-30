@@ -12,12 +12,14 @@ export class AppComponent implements OnInit {
   title = 'Guardar en LocalSession un array encriptado con crypto-js';
 
   //Esto en una aplicación rera podría ser la respuesta de un Servicio REST
-  miArray:Permiso[]=[{CodPermiso: "10", CodRol: "00", Descripcion: "COTIZAR-AUTO"},
-  {CodPermiso: "27", CodRol: "00", Descripcion: "COTIZAR-SALUD"},
-  {CodPermiso: "09", CodRol: "00", Descripcion: "COTIZAR-VIDA"},
-  {CodPermiso: "12", CodRol: "00", Descripcion: "EMITIR-VIDA"},
-  {CodPermiso: "28", CodRol: "00", Descripcion: "EMITIR-SALUD"},
-  {CodPermiso: "11", CodRol: "00", Descripcion: "EMITIR-AUTO"}];
+  miArray:Permiso[]=[
+      {CodPermiso: "01", CodRol: "00", Descripcion: "COTIZAR-AUTO"},
+      {CodPermiso: "21", CodRol: "01", Descripcion: "COTIZAR-SALUD"},
+      {CodPermiso: "19", CodRol: "02", Descripcion: "COTIZAR-VIDA"},
+      {CodPermiso: "22", CodRol: "05", Descripcion: "EMITIR-VIDA"},
+      {CodPermiso: "38", CodRol: "03", Descripcion: "EMITIR-SALUD"},
+      {CodPermiso: "41", CodRol: "04", Descripcion: "EMITIR-AUTO"}
+  ];
   
   miArrayDesencriptado:string;
   constructor(private mySession:SessionStorageService){}
