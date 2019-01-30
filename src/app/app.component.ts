@@ -22,17 +22,18 @@ export class AppComponent implements OnInit {
   ];
   
   miArrayDesencriptado:string;
+  
   constructor(private mySession:SessionStorageService){}
 
   ngOnInit() {
     //Encripta el arreglo y lo escribe en SessionStorage
-    var ciphertext  = CryptoJS.AES.encrypt(JSON.stringify(this.miArray), 'clavesecreta Mapfre');
+    var ciphertext  = CryptoJS.AES.encrypt(JSON.stringify(this.miArray), 'miclave');
     this.mySession.store('array',ciphertext.toString()); 
  
     //Sólo si la sesion existe la lee, desencriptándola y asignándola a la propiedad miArrayDesencriptado, para ser
     //mostrada en la plantilla html a través de interpolación
     if(this.mySession.retrieve("array")!=null){
-      var bytes  = CryptoJS.AES.decrypt(this.mySession.retrieve("array"), 'clavesecreta Mapfre');
+      var bytes  = CryptoJS.AES.decrypt(this.mySession.retrieve("array"), 'miclave');
       var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
       this.miArrayDesencriptado = JSON.stringify(decryptedData);
     }
