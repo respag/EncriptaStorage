@@ -1,0 +1,12 @@
+.marco{
+    border:1px solid red;
+    box-shadow: 10px 10px 20px black;
+    padding:20px;
+    text-align: left;
+    background-color: indianred;
+    font-family: helvetica;
+    font-size:20px;
+}
+h4{
+    text-align:left;
+}
